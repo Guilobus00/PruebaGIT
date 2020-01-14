@@ -11,11 +11,37 @@ package pruebagit;
  */
 public class PruebaGit {
 
+     public boolean palindromo (String cadena){
+        //suponemos que el String que nos pasan no tiene tildes.
+        cadena = cadena.toUpperCase();
+        int izq = 0;
+        int der = cadena.length() -1;
+        cadena = quita (cadena);
+        while ((izq <= der) && (cadena.charAt(izq) == cadena.charAt(der))){
+            izq++;
+            der--;
+        }
+        if (izq > der){
+            return true;
+        }
+        return false;
+  }
+    
+    private String quita (String cadena){
+        String auxiliar = "";
+        for (int i = 0; i < cadena.length(); i++){
+            if (cadena.charAt(i)!=' ') {
+            auxiliar = auxiliar + cadena.charAt(i);
+        }
+        }
+        return auxiliar;
+    }
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        //https://github.com/Guilobus00/PruebaGIT.git
+        //he añadido un método que quita espacios
     }
     
 }
